@@ -1,0 +1,45 @@
+name: Update Portfolio JSON
+
+on:
+  # Ejecución manual desde la pestaña Actions
+  workflow_dispatch:
+  # Programación cron (placeholder; ajusta la expresión según necesites)
+  schedule:
+    # Todos los días a las 6:00 UTC (ejemplo)
+    - cron: '0 6 * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write            # Necesario para hacer push
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar script de exportación
+        env:
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+        run: python scripts/export_sheets_to_json.py
+
+      - name: Commit y push si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/portfolio.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el JSON. No se realiza commit."
+          else
+            git commit -m "Actualización automática del portfolio JSON"
+            git push
+          fi
