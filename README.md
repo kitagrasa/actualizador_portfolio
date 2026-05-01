@@ -92,8 +92,7 @@ Usa actions/checkout@v5 y actions/setup-python@v6, compatibles con Node.js 24.
 Instala dependencias, ejecuta el script Python y hace commit + push solo si data/portfolio.json cambió.
 Usa GITHUB_TOKEN automático para el push (permiso contents: write).
 
-requirements.txt
-Dependencias estables: gspread==5.10.0, google-auth==2.22.0.
+REQUIREMENTS Dependencias estables: gspread==5.10.0, google-auth==2.22.0.
 
 Flujo de datos
 GitHub Actions inyecta los secretos SHEET_ID y GOOGLE_CREDENTIALS_JSON como variables de entorno.
