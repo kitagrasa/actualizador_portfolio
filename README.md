@@ -54,12 +54,12 @@ También se ejecutará según la programación definida en `update_portfolio.yml
 ### 5. Formato del JSON generado
 
 El archivo `data/portfolio.json` tendrá este aspecto:
-
+```json
 [
   { "close": 33.830002, "date": "2026-05-01" },
   { "close": 33.5625,   "date": "2026-04-30" }
 ]
-
+´´´json
 close: número decimal (float).
 date: formato ISO 8601 (YYYY-MM-DD).
 Los datos están ordenados de más reciente a más antiguo.
