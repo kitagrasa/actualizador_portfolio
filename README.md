@@ -60,10 +60,9 @@ El archivo `data/portfolio.json` tendrá este aspecto:
   { "close": 33.830002, "date": "2026-05-01" },
   { "close": 33.5625,   "date": "2026-04-30" }
 ]
-close: número decimal (float).
 
+# close: número decimal (float).
 date: formato ISO 8601 (YYYY-MM-DD).
-
 Los datos están ordenados de más reciente a más antiguo.
 
 Desarrollo local
@@ -77,7 +76,7 @@ Ningún dato sensible aparece en el código.
 Las credenciales se inyectan como secretos en el entorno de ejecución.
 El token de GitHub para el push se gestiona automáticamente (GITHUB_TOKEN).
 
-### Resumen técnico del proyecto (CONTEXT)
+# Resumen técnico del proyecto (CONTEXT)
 Estructura del proyecto
 scripts/export_sheets_to_json.py
 Script principal. Lee las variables de entorno SHEET_ID y GOOGLE_CREDENTIALS_JSON.
