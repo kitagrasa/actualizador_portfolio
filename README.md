@@ -59,7 +59,7 @@ El archivo `data/portfolio.json` tendrá este aspecto:
   { "close": 33.830002, "date": "2026-05-01" },
   { "close": 33.5625,   "date": "2026-04-30" }
 ]
-```json
+```
 close: número decimal (float).
 date: formato ISO 8601 (YYYY-MM-DD).
 Los datos están ordenados de más reciente a más antiguo.
