@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout del repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5  # Actualizado para Node.js 24
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6  # Actualizado para Node.js 24
         with:
           python-version: '3.12'
 
